@@ -4,7 +4,7 @@ Some samples on using Qt
 
 * myLesson1 : Demonstration of usage of slot/signal mechanish
 
-* myLesson2a : Usage of QWidgets, forms created with visual tools.
+* myLesson2a : Usage of QWidgets, forms created with visual tool.
 
 * myLesson2b : Usage of QWidgets, forms created programmatically.
 
