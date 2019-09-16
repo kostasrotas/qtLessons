@@ -1,0 +1,10 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+        "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node name="/org/example/kostasrotas/pipins">
+        <interface name="org.example.kostasrotas.pipins">
+            <method name="setPin">
+              <arg name="value" type="b" direction="in"/>
+            </method>            
+            <property name="pinValue" type="b" access="read"/>
+        </interface>
+</node>
