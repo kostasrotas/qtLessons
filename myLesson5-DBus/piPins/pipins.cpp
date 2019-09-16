@@ -12,7 +12,7 @@ PiPins::PiPins(QObject *parent) : QObject(parent){
     p.setStandardOutputFile("/sys/class/gpio/export");
     p.start("echo",QStringList()<<"9");
     p.waitForFinished();
-    p.setStandardOutputFile("/sys/class/gpio/gpio11/direction");
+    p.setStandardOutputFile("/sys/class/gpio/gpio9/direction");
     p.start("echo",QStringList()<<"in");
     p.waitForFinished();
 }
