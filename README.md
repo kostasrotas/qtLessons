@@ -12,4 +12,6 @@ Some samples on using Qt
 
 * myLesson4 : Demonstration of q QML project. Usage of ListView with model. Properties.
 
+* myLesson5 : How to use daemons and D-Bus.How to handle GPIO's of Raspberry Pi.
+
 
