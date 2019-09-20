@@ -1,0 +1,79 @@
+Raspberry Pi zero
+
+*How to start :
+  Download rasbian image from this URL:
+  https://www.raspberrypi.org/downloads/raspbian/
+  "Raspbian buster with desktop".
+  Connect sd card to computer and then:
+  lsblk
+    to find connected device to sd, then unmount if needed:
+  umount /dev/sdb1  (if sdb1 is the mounted sd card)
+    then copy image to sd:
+  dd bs=4M if=2019-07-10-raspbian-buster.img of=/dev/sdX status=progress conv=fsync
+
+
+  You need to connect Raspberry pi to a monitor and to mouse and keyboard to use this
+
+*How to use Raspberry Pi remotely for your PC (Ubuntu or Windows) 
+
+- Connect Raspberry Pi to your wifi
+
+- Install vnc server to R-pi:
+   sudo apt-get update
+   sudo install tightvncserver
+
+- Start vncserver
+   vncserver:1
+   <Enter the password you want>
+
+- Setup VNC server to start automatically.
+  (from https://www.instructables.com/id/Setting-up-a-VNC-Server-on-your-Raspberry-Pi/)
+  sudo raspi-config
+    Boot options -> Desktop auto login, auto log
+    Boot options -> wait for network connection
+     <Finish> 
+  cd /home/pi
+  cd .config
+  sudo mkdir autostart
+  cd autostart
+  sudo nano tightvnc.desktop
+    Create file with content:
+           [Desktop Entry]
+           Type=Application
+           Name=TightVNC
+           Exec=vncserver:1
+           StartupNotify=false
+    <Press CTRL-o and CTRL-x when finished>
+
+* How to connect to R-pi from your Ubuntu via vnc
+  sudo apt-get install tightvnc-java
+  You will also need nmap:
+  sudo apt-get install nmap
+
+  Find the IP of R-pi
+  sudo nmap -an 192.168.1.0/24
+  ...
+  jtightvncviewer 192.168.1.17:1
+  <psw etc>
+  ...
+
+* How to install QTCreator on R-pi
+  sudo apt-get install qt5-default
+  sudo apt-get install qtcreator
+    Also I had this problem:
+    "Dependencies for QML in Raspbian are somewhat confusing.
+     Try checking if you have these packages installed, using apt-get install"
+      sudo apt-get install qtdeclarative5-*
+      sudo apt-get install qml-module-qtquick*
+      sudo apt-get install qtquick1-*
+      sudo apt-get install qtquickcontrols5-*
+      sudo apt-get install qml-module-qtquick2
+
+
+
+
+  
+
+
+
+

@@ -10,7 +10,7 @@ Some samples on using Qt
 
 * myLesson3 : Usage of QWidgets, animation, timing
 
-* myLesson4 : Demonstration of q QML project. Usage of ListView with model. Properties.
+* myLesson4 : Demonstration of a QML project. Usage of ListView with model. Properties.
 
 * myLesson5 : How to use daemons and D-Bus.How to handle GPIO's of Raspberry Pi.
 
