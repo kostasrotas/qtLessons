@@ -51,7 +51,7 @@ Raspberry Pi zero
   sudo apt-get install nmap
 
   Find the IP of R-pi
-  sudo nmap -an 192.168.1.0/24
+  sudo nmap -sn 192.168.1.0/24
   ...
   jtightvncviewer 192.168.1.17:1
   <psw etc>
