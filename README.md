@@ -8,7 +8,7 @@ Some samples on using Qt
 
 * myLesson2b : Usage of QWidgets, forms created programmatically.
 
-* myLesson2bTest : Testcases using QT
+* myLesson2bTest : Testcases using QT07e984bcd21
 
 * myLesson3 : Usage of QWidgets, animation, timing
 
