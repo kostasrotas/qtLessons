@@ -2,23 +2,25 @@
 #define BALLWIDGET_H
 
 #include <QtWidgets>
+#include "ballobject.h"
 
 class BallWidget : public QWidget
 {
-    int timerID;
-    int startSpeed,speed,ballPos;
     Q_OBJECT
 public:
     explicit BallWidget(QWidget *parent = 0);
+    BallObject * getBallObject();
     ~BallWidget();
 
 signals:
 
 public slots:
-    void startBall();
-    void changeStartSpeed(int);
-    void timerEvent(QTimerEvent *event);
+    void posChanged(int bpos);
     void paintEvent(QPaintEvent *event);
+
+private:
+    BallObject ballObject;
+    int ballPos;
 };
 
 #endif // BALLWIDGET_H

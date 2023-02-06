@@ -7,8 +7,7 @@
 class MainWindow : public QWidget
 {
 
-    QLineEdit *lineEdit;
-    QPushButton *pushButton;
+friend class MainWindowTest;
 
     Q_OBJECT
 
@@ -18,6 +17,10 @@ public:
 
 public slots:
     void buttonPressed();
+
+private:
+    QLineEdit *lineEdit;
+    QPushButton *pushButton;
 };
 
 #endif // MAINWINDOW_H

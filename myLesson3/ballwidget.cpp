@@ -1,11 +1,13 @@
 #include "ballwidget.h"
 
 
-BallWidget::BallWidget(QWidget *parent) : QWidget(parent){    
-    startSpeed=15;
-    ballPos=0;
-    speed=0;
-    timerID=startTimer(100);
+BallWidget::BallWidget(QWidget *parent) : QWidget(parent),ballObject(nullptr){
+    QObject::connect(&ballObject,SIGNAL(posChanged(int)),this,SLOT(posChanged(int)));
+}
+
+BallObject *BallWidget::getBallObject()
+{
+    return &ballObject;
 }
 
 BallWidget::~BallWidget()
@@ -13,28 +15,10 @@ BallWidget::~BallWidget()
 
 }
 
-void BallWidget::startBall(){
-    if (speed==0 && ballPos==0)
-        speed=startSpeed;
-    qDebug()<<"startBall received :"<<speed;
-    qDebug()<<QObject::sender()->property("myValue");
-}
-
-
-void BallWidget::changeStartSpeed(int newvalue){
-    startSpeed=newvalue;
-}
-
-
-void BallWidget::timerEvent(QTimerEvent *event){
-    if (event->timerId()==timerID){
-        ballPos+=speed--;
-        if (ballPos<=0){
-            speed=0;
-            ballPos=0;
-        }
-        repaint();
-    }
+void BallWidget::posChanged(int bPos)
+{
+    ballPos=bPos;
+    update();
 }
 
 void BallWidget::paintEvent(QPaintEvent *event){

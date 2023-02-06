@@ -13,10 +13,12 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
+    ballobject.cpp \
         widget.cpp \
     ballwidget.cpp
 
 HEADERS  += widget.h \
+    ballobject.h \
     ballwidget.h
 
 FORMS    += widget.ui

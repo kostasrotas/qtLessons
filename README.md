@@ -8,7 +8,11 @@ Some samples on using Qt
 
 * myLesson2b : Usage of QWidgets, forms created programmatically.
 
+* myLesson2bTest : Testcases using QT
+
 * myLesson3 : Usage of QWidgets, animation, timing
+
+* myLesson3-qml : Usage of qml. Properties, notification.
 
 * myLesson4 : Demonstration of a QML project. Usage of ListView with model. Properties.
 
